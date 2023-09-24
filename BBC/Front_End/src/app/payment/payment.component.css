@@ -1,0 +1,31 @@
+/* Center-align the component vertically and horizontally */
+.payment-selection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the component takes the full viewport height */
+    background-color: #f4f4f4; /* Set the background color */
+  }
+  
+  /* Style the container for payment methods */
+  .payment-method {
+    margin: 10px 0;
+  }
+  
+  /* Style the radio button label */
+  label {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style the "Proceed to Payment" button */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,60 @@
+
+<p hi></p>
+<div class="container-fluid">
+
+
+
+    <app-header></app-header>
+    <!-- <app-customerlogin></app-customerlogin> -->
+    
+    <div class="row">
+        <div class="col">
+            
+
+            
+<!--
+            <ng-template #popUp >                
+                <app-updateemployee [parentdata]="empobj" ></app-updateemployee>
+                <button class="btn btn-danger" (click)="modalRef.hide()">Cancel</button>
+            </ng-template> -->
+
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <!-- Table column headings -->
+      <th>Select</th>
+      <th>Bill ID</th>
+      <th>Bill Amount</th>
+      <th>Customer ID</th>
+      <th>status</th>
+      <!-- Add more headings if needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Table rows generated dynamically -->
+    <tr *ngFor="let billinfo of bills">
+      <!-- Radio button for selecting the bill -->
+      <td><input type="radio" name="selectedBill" [(ngModel)]="selectedBill" [value]="billinfo"></td>
+      <!-- Display bill information -->
+      <td>{{ billinfo.billid }}</td>
+      <td>{{ billinfo.billamount }}</td>
+      <td>{{ billinfo.customerid }}</td>
+
+      <td>
+        <button [ngClass]="{'btn btn-success': billinfo.status === 'paid', 'btn btn-danger': billinfo.status === 'unpaid'}"
+        (click)="navigateToPayment(billinfo.status)"></button>
+        {{billinfo.status}}
+       </td>
+      <!-- Add more columns for additional bill properties -->
+    </tr>
+  </tbody>
+</table>
+
+  
+            <!-- <pagination-controls (pageChange)="p = $event" class="pull-right"></pagination-controls> -->
+
+        </div>
+    </div>
+
+</div>
